@@ -5,14 +5,14 @@ code[class*="language-"],
 pre[class*="language-"] {
   color: white;
   background: none;
-  font-family: Consolas,Menlo,Monaco,source-code-pro,Courier New,monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-feature-settings: normal;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
-  line-height: 1.5;
+  line-height: 1.8;
   margin-bottom: 0;
 
   -moz-tab-size: 4;
@@ -23,6 +23,7 @@ pre[class*="language-"] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
+  font-size: 0.8rem;
 }
 
 /* Code blocks */
@@ -54,11 +55,9 @@ pre[class*="language-"]::selection, pre[class*="language-"] ::selection {
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
-  border-radius: .3em;
-  background: rgba(255,229,100,0.2);
-  color: #1a1a1a;
-  padding: .15em .2em .05em;
-  white-space: normal;
+  font-family: 'IBM Plex Mono', monospace;
+  color: #a626a4;
+  font-size: 1rem;
 }
 
 .token.attr-name {

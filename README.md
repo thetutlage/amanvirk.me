@@ -1,7 +1,3 @@
-# overreacted.io
+# amanvirk.me
 
-My personal blog. Forked from [Gatsby blog starter](https://github.com/gatsbyjs/gatsby-starter-blog). Syntax theme based on [Sarah Drasner's Night Owl](https://github.com/sdras/night-owl-vscode-theme/) with small tweaks.
-
-To run locally, `yarn`, then `yarn dev`, then open https://localhost:8000.
-
-If you translate content into other languages feel free to PR links. Please ensure translations link to the original content.
+My personal blog created using [Gatsby.js]() and deployed on [Netlify](). A special thanks to [Dan Abramov](https://github.com/gaearon), the code is a fork of his personal blog with handful of css tweaks.

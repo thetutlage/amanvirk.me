@@ -25,7 +25,7 @@ class BlogIndex extends React.Component {
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug
           return (
-            <div key={node.fields.slug}>
+            <div key={node.fields.slug} className="blog-item">
               <h3
                 style={{
                   marginBottom: rhythm(1 / 4),
@@ -37,7 +37,6 @@ class BlogIndex extends React.Component {
               </h3>
               <small>
                 {node.frontmatter.date}
-                {` • ${formatReadingTime(node.timeToRead)}`}
               </small>
               <p
                 dangerouslySetInnerHTML={{ __html: node.frontmatter.spoiler }}

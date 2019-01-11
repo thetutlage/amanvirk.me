@@ -9,8 +9,8 @@ import Signup from '../components/Signup'
 import { formatReadingTime } from '../utils/helpers'
 import { rhythm, scale } from '../utils/typography'
 
-const GITHUB_USERNAME = 'gaearon'
-const GITHUB_REPO_NAME = 'overreacted.io'
+const GITHUB_USERNAME = 'thetutlage'
+const GITHUB_REPO_NAME = 'amanvirk.me'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -21,7 +21,7 @@ class BlogPostTemplate extends React.Component {
       /\//g,
       ''
     )}.md`
-    const discussUrl = `https://mobile.twitter.com/search?q=${encodeURIComponent(`https://overreacted.io${slug}`)}`
+    const discussUrl = `https://twitter.com/search?q=${encodeURIComponent(`https://amanvirk.me${slug}`)}`
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
@@ -29,17 +29,19 @@ class BlogPostTemplate extends React.Component {
           description={post.frontmatter.spoiler}
           slug={post.fields.slug}
         />
-        <h1>{post.frontmatter.title}</h1>
+        <h1 style={{
+          marginTop: rhythm(4)
+        }}>{post.frontmatter.title}</h1>
         <p
           style={{
             ...scale(-1 / 5),
             display: 'block',
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
+            color: '#999',
+            marginBottom: rhythm(1.5),
+            marginTop: rhythm(-0.5),
           }}
         >
           {post.frontmatter.date}
-          {` • ${formatReadingTime(post.timeToRead)}`}
         </p>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <p>
@@ -52,50 +54,25 @@ class BlogPostTemplate extends React.Component {
           </a>
         </p>
         <div style={{ margin: '90px 0 40px 0' }}>
-          <Signup />
-        </div>
-        <h3
-          style={{
-            fontFamily: 'Montserrat, sans-serif',
-            marginTop: rhythm(0.25),
-          }}
-        >
-          <Link
+          <h3
             style={{
-              boxShadow: 'none',
-              textDecoration: 'none',
-              color: '#ffa7c4',
+              fontFamily: 'Montserrat, sans-serif',
+              marginTop: rhythm(0.25),
             }}
-            to={'/'}
           >
-            Overreacted
-          </Link>
-        </h3>
-        <Bio />
-        <ul
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            justifyContent: 'space-between',
-            listStyle: 'none',
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
+            <Link
+              style={{
+                boxShadow: 'none',
+                textDecoration: 'none',
+                color: '#e30000',
+              }}
+              to={'/'}
+            >
+              amanvirk.me
+            </Link>
+          </h3>
+          <Bio />
+        </div>
       </Layout>
     )
   }
@@ -114,6 +91,7 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
+      tableOfContents
       timeToRead
       frontmatter {
         title
